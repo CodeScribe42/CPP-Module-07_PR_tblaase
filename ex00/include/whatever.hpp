@@ -6,11 +6,11 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 11:59:17 by tblaase           #+#    #+#             */
-/*   Updated: 2022/04/13 14:33:20 by tblaase          ###   ########.fr       */
+/*   Updated: 2022/04/13 14:36:35 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#pragma once
 
 template< typename T > // defines, T is a template
 
