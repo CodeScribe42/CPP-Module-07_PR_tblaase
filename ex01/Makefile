@@ -6,7 +6,7 @@
 #    By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/13 14:43:52 by tblaase           #+#    #+#              #
-#    Updated: 2022/04/13 15:40:07 by tblaase          ###   ########.fr        #
+#    Updated: 2022/04/13 15:58:26 by tblaase          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ UP			=	\033[A
 CUT			=	\033[K
 
 #source files
-SRC_FILES	=
+SRC_FILES	=	main.cpp
 
 OBJ_FILES	=	$(SRC_FILES:.cpp=.o)
 
