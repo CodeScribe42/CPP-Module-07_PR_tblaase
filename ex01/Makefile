@@ -6,7 +6,7 @@
 #    By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/04/13 14:43:52 by tblaase           #+#    #+#              #
-#    Updated: 2022/04/13 14:43:54 by tblaase          ###   ########.fr        #
+#    Updated: 2022/04/13 15:40:07 by tblaase          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ CXX			=	c++
 CXXFLAGS	=	-Wall -Werror -Wextra -std=c++98
 
 #directories
+PWD			=	$(shell pwd)
 SRC_DIR		=	src/
 OBJ_DIR		=	obj/
 INC_DIR		=	include/
@@ -68,16 +69,16 @@ $(OBJ_DIR)%.o:$(SRC_DIR)%.cpp
 clean:
 	@if [ -d "$(OBJ_DIR)" ]; then \
 	rm -rf $(OBJ_DIR); \
-	echo "$(BLUE)Deleting all objects from /ex01...$(RESET)"; else \
-	echo "No objects to remove from /ex01."; \
+	echo "$(BLUE)Deleting all objects from $(PWD)...$(RESET)"; else \
+	echo "No objects to remove from $(PWD)."; \
 	fi;
 
 #fclean rule
 fclean: clean
 	@if [ -f "$(NAME)" ]; then \
 	rm -f $(NAME); \
-	echo "$(BLUE)Deleting $(NAME) from /ex01...$(RESET)"; else \
-	echo "No Executable to remove from /ex01."; \
+	echo "$(BLUE)Deleting $(NAME) from $(PWD)...$(RESET)"; else \
+	echo "No Executable to remove from $(PWD)."; \
 	fi;
 
 #re rule
