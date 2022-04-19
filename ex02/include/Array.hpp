@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/19 11:45:09 by tblaase           #+#    #+#             */
-/*   Updated: 2022/04/19 13:06:16 by tblaase          ###   ########.fr       */
+/*   Updated: 2022/04/19 13:24:56 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,10 @@ class Array
 	// Constructors
 		Array(): _size(0)
 		{
-			std::cout << "Default Constructor called" << std::endl;
+			std::cout << "Default Constructor called: created empty Array of size 0" << std::endl;
 			this->_array = new T[this->_size];
 			// for (unsigned int i = 0; i < this->size(); i++)
-			// 	std::cout << this->_array[i] << std::endl;
+				// std::cout << this->_array << std::endl;
 		}
 
 		Array(unsigned int size): _size(size)

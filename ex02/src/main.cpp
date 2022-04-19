@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 #include "Array.hpp"
 
 #define MAX_VAL 750
@@ -15,10 +16,22 @@ int main(int, char**)
     }
     //SCOPE
     {
-        Array<int> tmp = numbers;
+        Array<int> tmp;
+        try
+        {
+            for (int i = 0; i < MAX_VAL + 1; i++)
+                std::cout << "tmp[" << i << "]:\t" << tmp[i] << std::endl;
+        }
+        catch(const std::exception& e)
+        {
+            std::cerr << e.what() << '\t';
+            std::cerr << "You tried to access past the last element of the array" << std::endl;
+        }
+        tmp = numbers;
         Array<int> test(tmp);
 
-        try{
+        try
+        {
             for (int i = 0; i < MAX_VAL + 1; i++)
         {
             if (tmp[i] != test[i])
