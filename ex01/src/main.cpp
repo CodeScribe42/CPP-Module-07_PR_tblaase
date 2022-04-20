@@ -6,7 +6,7 @@
 /*   By: tblaase <tblaase@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/13 15:50:03 by tblaase           #+#    #+#             */
-/*   Updated: 2022/04/13 17:26:38 by tblaase          ###   ########.fr       */
+/*   Updated: 2022/04/20 10:53:54 by tblaase          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int main()
 	"\n\ta[2]: " << a[2] <<
 	std::endl << std::endl;
 
-	::iter(a, sizeof(a) / sizeof(char), ft_toupper);
+	::iter(a, 2, ft_toupper);
 
 	std::cout << "Changed:" <<
 	"\n\ta[0]: " << a[0] <<
