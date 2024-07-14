@@ -28,20 +28,20 @@ class Array
 		Array(): _size(0)
 		{
 			std::cout << "Default Constructor called: created empty Array of size 0" << std::endl;
-			this->_array = new T[this->_size];
+			this->_array = new T[this->size()];
 			// for (unsigned int i = 0; i < this->size(); i++)
 				// std::cout << this->_array << std::endl;
 		}
 
 		Array(unsigned int size): _size(size)
 		{
-			std::cout << "Constructor for an Array of size " << size << " called" << std::endl;
-			this->_array = new T[this->_size];
+			std::cout << "Constructor for an Array of size " << this->size() << " called" << std::endl;
+			this->_array = new T[this->size()]();
 			// for (unsigned int i = 0; i < this->size(); i++)
 			// 	std::cout << this->_array[i] << std::endl;
 		}
 
-		Array(const Array &src): _size(src.size())
+		Array(const Array &src)
 		{
 			std::cout << "Copy Constuctor called" << std::endl;
 			this->_array = NULL;
@@ -51,6 +51,7 @@ class Array
 	// Deconstructors
 		~Array()
 		{
+			std::cout << "Destructor called" << std::endl;
 			if (this->_array != NULL)
 				delete [] this->_array;
 		}
@@ -63,7 +64,7 @@ class Array
 			if (src.size() != 0)
 			{
 				this->_size = src.size();
-				this->_array = new T[this->_size];
+				this->_array = new T[this->size()];
 				for (unsigned int i = 0; i < this->size(); i++)
 					this->_array[i] = src._array[i];
 			}
@@ -72,7 +73,17 @@ class Array
 
 		T &operator[]( unsigned int index )
 		{
-			if (index >= this->_size || this->_array == NULL)
+			if (index >= this->size() || this->_array == NULL)
+			{
+				std::cout << "index: " << index << std::endl;
+				throw Array<T>::InvalidIndexException();
+			}
+			return (this->_array[index]);
+		}
+
+		const T &operator[]( unsigned int index ) const
+		{
+			if (index >= this->size() || this->_array == NULL)
 			{
 				std::cout << "index: " << index << std::endl;
 				throw Array<T>::InvalidIndexException();
